@@ -379,7 +379,8 @@ table.awx-tbl{width:100%;border-collapse:collapse;background:#151922;border-radi
    renderer rebuilds the bar. */
 (function(){
  function bar(){return document.getElementById('tabBar')||document.querySelector('.tab-bar')
-   ||document.querySelector('.tabbar')||document.querySelector('.tabs')||document.querySelector('[role=tablist]');}
+   ||document.querySelector('.tabbar')||document.querySelector('.tabs-bar')||document.querySelector('.tabs')
+   ||document.getElementById('tabs')||document.querySelector('[role=tablist]');}
  function add(){
    var b=bar();if(!b)return false;
    if(document.getElementById('awx-tab'))return true;
