@@ -384,7 +384,7 @@ function render() {
   if (filterWinners) rows = rows.filter(r => r.cac != null && r.cac > 0 && r.cac <= 1800);
   if (filterMinSpend) rows = rows.filter(r => r.cost >= 1500);
 
- rows = rows.filter(__cfEval);
+ rows = (typeof __cfEval==='function') ? rows.filter(__cfEval) : rows;
   rows.sort((a, b) => {
     let av = a[sortCol], bv = b[sortCol];
     if (av == null && bv == null) return 0;
